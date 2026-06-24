@@ -50,7 +50,7 @@ jobs:
       - name: Push Image
         run: |
           docker push \
-            us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}repo-for-gcloud-run/${IMAGE_NAME}:${{ github.sha }}
+            us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/repo-for-gcloud-run/${IMAGE_NAME}:${{ github.sha }}
 
       - name: Deploy Cloud Run
         run: |
