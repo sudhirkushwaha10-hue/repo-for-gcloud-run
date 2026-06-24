@@ -38,8 +38,8 @@ jobs:
       - name: Set Variables
         run: |
           echo "BRANCH_NAME=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "IMAGE_NAME=demo-app-${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "SERVICE_NAME=demo-app-${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "IMAGE_NAME=QA-app-${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "SERVICE_NAME=QA-app-${{ github.ref_name }}" >> $GITHUB_ENV
 
       - name: Build Image
         run: |
