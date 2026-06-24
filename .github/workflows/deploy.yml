@@ -31,16 +31,16 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t us-central1-docker.pkg.dev/main-project-500308/repo-for-gcloud-run/webapp:${{ github.sha }} .
+          docker build -t us-central1-docker.pkg.dev/dev-project-500307/repo-for-gcloud-run/webapp:${{ github.sha }} .
 
       - name: Push Docker Image
         run: |
-          docker push us-central1-docker.pkg.dev/main-project-500308/repo-for-gcloud-run/webapp:${{ github.sha }}
+          docker push us-central1-docker.pkg.dev/dev-project-500307/repo-for-gcloud-run/webapp:${{ github.sha }}
 
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy webapp \
-            --image us-central1-docker.pkg.dev/main-project-500308/repo-for-gcloud-run/webapp:${{ github.sha }} \
+            --image us-central1-docker.pkg.dev/dev-project-500307/repo-for-gcloud-run/webapp:${{ github.sha }} \
             --region us-central1 \
             --platform managed \
             --allow-unauthenticated
